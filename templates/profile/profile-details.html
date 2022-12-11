@@ -6,7 +6,7 @@
             <div class="col-2 img-container">
                 <img src="{% static '/images/default-profile.jpg' %}" alt="User Image">
             </div>
-            <div class="col-5 border">
+            <div class="col-5 border profile-details">
                 {% if object.get_full_name %}
                     <h3> {{ object.get_full_name }} </h3>
                 {% endif %}

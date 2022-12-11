@@ -17,14 +17,6 @@ body {
     padding-top: 60px;
 }
 
-.home-buttons {
-    width: 110px;
-    margin-left: 10px;
-    border: none;
-    color: gray;
-}
-
-
 .event-title a {
     font-size: 18px;
     color: white;
@@ -50,8 +42,6 @@ body {
     opacity: 0.5;
 }
 
-
-
 .home-photo {
     border: 1px solid white;
     margin-bottom: 60px;
@@ -59,16 +49,28 @@ body {
     height: auto;
 }
 
-.add-image-btn {
-    background-color: #ced4da;
+.photo-delete a {
+    color:red;
 }
 
-p {
+.event-date,
+.add-photo,
+.profile-details,
+.add-event,
+.photo-session-title h3 {
+    color: white;
+}
+
+.username-container h2 {
+    color: rgb(231, 179, 129);
+}
+
+.profile-details p {
     color: white;
 }
 
 
-h3 {
+.add-event h3 {
     margin-bottom: 30px;
     color: white
 }

@@ -78,14 +78,19 @@
         </div>
     </div>
 </nav>
-<form class="form-inline form-group" method="post" action="{% url 'sign in' %}">
+<form class="form-group" method="post" action="{% url 'sign in' %}">
 
     <h2>Welcome</h2>
+    {% if form.errors %}
+        <h5 class="error-login-message" >Wrong Username or Password</h5>
+    {% endif %}
     <p>
         {{ form.username|placeholder:'Username' }}
+
     </p>
     <p>
         {{ form.password|placeholder:'Password' }}
+
     </p>
 
     <input type="hidden" name="next" value="{{ next }}">

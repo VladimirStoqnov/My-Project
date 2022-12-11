@@ -4,7 +4,7 @@
 
     <div class="container text-center">
     <div class="row row-container">
-        <form class="register-form container text-center" method="post" action="">
+        <form class="register-form container text-center" method="post" action="{% url 'sign up' %}">
             <h2>Register</h2>
             <p>
                 {{ form.username.errors }}
