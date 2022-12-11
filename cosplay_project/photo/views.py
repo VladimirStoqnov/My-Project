@@ -26,7 +26,7 @@ def add_photo(request):
         'form': form,
     }
 
-    return render(request, 'add_photo.html', context)
+    return render(request, 'photo/add_photo.html', context)
 
 
 @login_required(login_url='sign in')
@@ -44,10 +44,10 @@ def add_photo_sessions(request):
         'form': form,
     }
 
-    return render(request, 'photo_session.html', context)
+    return render(request, 'photo_session/photo_session.html', context)
 
 
 class DeletePhotoView(views.DeleteView):
-    template_name = 'delete-photo.html'
+    template_name = 'photo/delete-photo.html'
     model = Photo
     success_url = reverse_lazy('index')

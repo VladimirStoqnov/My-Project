@@ -11,11 +11,11 @@ UserModel = get_user_model()
 
 
 class SignInView(auth_views.LoginView):
-    template_name = 'login.html'
+    template_name = 'common/login.html'
 
 
 class SignUpView(views.CreateView):
-    template_name = 'register.html'
+    template_name = 'profile/profile-register.html'
     form_class = UserCreateForm
 
     success_url = reverse_lazy('index')
@@ -32,7 +32,7 @@ class SignOutView(auth_views.LogoutView):
 
 
 class UserDetailsView(views.DetailView):
-    template_name = 'profile-details.html'
+    template_name = 'profile/profile-details.html'
     model = UserModel
 
     def get_context_data(self, **kwargs):
@@ -44,7 +44,7 @@ class UserDetailsView(views.DetailView):
 
 
 class UserEditView(views.UpdateView):
-    template_name = 'edit.html'
+    template_name = 'profile/profile-edit.html'
     fields = ('first_name', 'last_name', 'age', 'description', )
     model = UserModel
 
@@ -55,7 +55,7 @@ class UserEditView(views.UpdateView):
 
 
 class UserDeleteView(views.DeleteView):
-    template_name = 'delete.html'
+    template_name = 'profile/profile-delete.html'
     model = UserModel
     success_url = reverse_lazy('index')
 
@@ -69,23 +69,23 @@ def index(request):
         'all_events': all_events,
     }
 
-    return render(request, 'home.html', context)
+    return render(request, 'common/home.html', context)
 
 
 class EventCreateView(views.CreateView):
-    template_name = 'add-event.html'
+    template_name = 'event/add-event.html'
     success_url = '/'
     form_class = EventForm
 
 
 class EventEditView(views.UpdateView):
-    template_name = 'edit-event.html'
+    template_name = 'event/edit-event.html'
     fields = ('title', 'date_of_event', 'url')
     model = Event
     success_url = '/'
 
 
 class EventDeleteView(views.DeleteView):
-    template_name = 'delete-event.html'
+    template_name = 'event/delete-event.html'
     model = Event
     success_url = reverse_lazy('index')
