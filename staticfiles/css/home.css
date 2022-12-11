@@ -1,0 +1,80 @@
+body {
+    background-image: url('../images/1123013.jpg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+.navbar {
+    margin-top: 10px;
+    width: 100%;
+    height: 50px;
+
+
+}
+
+.row-container {
+    padding-top: 60px;
+}
+
+.home-buttons {
+    width: 110px;
+    margin-left: 10px;
+    border: none;
+    color: gray;
+}
+
+
+.event-title a {
+    font-size: 18px;
+    color: white;
+    text-decoration: none;
+}
+
+.event-title a:hover {
+    color: green;
+    opacity: 0.8;
+}
+
+.photo-delete a,
+.event-delete a {
+    font-size: 18px;
+    color: white;
+    text-decoration: none;
+    margin-left: 10px;
+}
+
+.photo-delete a:hover,
+.event-delete a:hover {
+    color: red;
+    opacity: 0.5;
+}
+
+
+
+.home-photo {
+    border: 1px solid white;
+    margin-bottom: 60px;
+    width: 50%;
+    height: auto;
+}
+
+.add-image-btn {
+    background-color: #ced4da;
+}
+
+p {
+    color: white;
+}
+
+
+h3 {
+    margin-bottom: 30px;
+    color: white
+}
+
+.title-home {
+    color: white;
+}
+
+

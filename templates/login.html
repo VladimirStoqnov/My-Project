@@ -1,0 +1,98 @@
+{% load placeholders %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static '/css/bootstrap/css/bootstrap.css' %}">
+    <link rel="stylesheet" href="{% static '/css/login.css' %}">
+    <link rel="Shortcut Icon" type="image/png" href="{% static '/images/favicon.png' %}">
+    <title>Login</title>
+</head>
+<body>
+<!-- JavaScript Bundle with Popper -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
+        crossorigin="anonymous"></script>
+<nav class="navbar navbar-expand-lg bg-light">
+    <div class="container-fluid">
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+
+                <li class="nav-item dropdown">
+                    <a class="btn btn-outline-success home-button" href="{% url 'index' %}">Home</a>
+                    <li><a class="btn btn-outline-success home-button" href="{% url 'photo session' %}">PhotoSession</a></li>
+                </li>
+
+{#                <li class="nav-item dropdown">#}
+{#                    <a class="btn btn-outline-success home-button" href="#" role="button" data-bs-toggle="dropdown"#}
+{#                       aria-expanded="false">#}
+{#                        More#}
+{#                    </a>#}
+{#                    <ul class="dropdown-menu">#}
+{#                        <li><a class="dropdown-item" href="#">Catalogue</a></li>#}
+{#                        <li><a class="dropdown-item" href="#">Album</a></li>#}
+{#                        <li><a class="dropdown-item" href="#">Music</a></li>#}
+{##}
+{##}
+{#                    </ul>#}
+{#                </li>#}
+
+
+            </ul>
+            <ul class="navbar-nav me-right mb-2 mb-lg-0">
+                {% if request.user.is_authenticated %}
+                    <div>
+                        <a href="{% url 'create event' %}" class="btn btn-outline-success nav-right-btn home-buttons">Add
+                            Event</a>
+                    </div>
+                    <div>
+                        <a href="{% url 'add photo' %}" class="btn btn-outline-success nav-right-btn home-buttons">Add
+                            Photo</a>
+                    </div>
+                    <div class="nav-item">
+                        <a class="btn btn-outline-success home-buttons"
+                           href="{% url 'details user' pk=request.user.pk %}">Profile</a>
+                    </div>
+
+                    <div class="nav-item">
+                        <a class="btn btn-outline-success home-buttons" href="{% url 'logout user' %}">Logout</a>
+                    </div>
+                {% else %}
+                    <div>
+                        <a href="{% url 'sign up' %}" class="btn btn-outline-success nav-right-btn home-buttons">Register</a>
+                    </div>
+                    <div>
+                        <a href="{% url 'sign in' %}"
+                           class="btn btn-outline-success nav-right-btn home-buttons">Login</a>
+                    </div>
+                {% endif %}
+            </ul>
+
+        </div>
+    </div>
+</nav>
+<form class="form-inline form-group" method="post" action="{% url 'sign in' %}">
+
+    <h2>Welcome</h2>
+    <p>
+        {{ form.username|placeholder:'Username' }}
+    </p>
+    <p>
+        {{ form.password|placeholder:'Password' }}
+    </p>
+
+    <input type="hidden" name="next" value="{{ next }}">
+    <button class="submit-btn" type="submit">Login</button>
+
+    {% csrf_token %}
+
+</form>
+</body>
+</html>

@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% block content %}
+
+    <div class="row row-container">
+        <form method="post" action="{% url 'add photo' %} " enctype="multipart/form-data">
+            <div class="container text-center add-photo">
+
+                    <h3>Please add Photo</h3>
+                    {#        <p>#}
+                    {#            <label for="user-photo">Photo Name: </label>#}
+                    {#            <input type="text" placeholder="Photo Name">#}
+                    {#        </p>#}
+                    {#        <p>#}
+                    {#            <label for="date-added">Date Added: </label>#}
+                    {#            <input type="date">#}
+                    {#        </p>#}
+                    {#        <p>#}
+                    {#            <label for="image">Image: </label>#}
+                    {#            <input type="image" placeholder="Link to image">#}
+                    {#        </p>#}
+
+                    {{ form.as_p }}
+                    {% csrf_token %}
+                    <button type="submit">Submit</button>
+                </div>
+
+        </form>
+</div>
+
+{% endblock %}

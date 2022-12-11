@@ -1,0 +1,55 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+    {% if request.user.is_authenticated %}
+        <div class="container-fluid text-center">
+        <!-- events -->
+
+
+        <div class="row row-container justify-content-md-center">
+            {% for event in all_events %}
+                <div class="col-md-2 border">
+
+                    <div class="event-title">
+                        <a href="{{ event.url }}">{{ event.title }}</a>
+                    </div>
+                    <div class="event-date">
+                        <p>
+                            {{ event.date_of_event }}
+                        </p>
+                    </div>
+                    {% if request.user.is_superuser or request.user.is_staff %}
+                        <div class="event-delete">
+                            <a href="{% url 'edit event' pk=event.pk %}">Edit</a>
+                            <a href="{% url 'delete event' pk=event.pk %}">Delete</a>
+                        </div>
+                    {% endif %}
+
+                </div>
+            {% endfor %}
+        </div>
+
+        <div class="row row-container justify-content-md-center">
+            {% for photo in all_photos %}
+                <div class="username-container" >
+                    <h2>{{ photo.user.username }}</h2>
+                {% if request.user.is_superuser or request.user.is_staff %}
+                    <div class="photo-delete">
+                        <a href="{% url 'delete photo' pk=photo.pk %}">Delete</a>
+                    </div>
+                {% endif %}
+                <div class="col-xs justify-content-md-center">
+
+                    <img class="home-photo" src="{{ photo.photo.url }}" alt="Home Page Image">
+                </div>
+
+            {% endfor %}
+            </div>
+
+        </div>
+    {% else %}
+        <div class="container-fluid text-center">
+            <h1 class="title-home">Please Login or Register</h1>
+        </div>
+    {% endif %}
+{% endblock %}

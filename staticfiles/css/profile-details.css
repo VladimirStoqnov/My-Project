@@ -1,0 +1,22 @@
+body {
+    background-image: url('../images/1123013.jpg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+img {
+    width:200px
+}
+
+.img-container {
+    height: 200px;
+}
+
+.profile-edit-btn,
+.profile-delete-btn {
+    margin-left:20px;
+    color:red;
+    font-size: x-large;
+    text-decoration-line: none;
+}

@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+    <div class="container text-center">
+        <div class="row row-container justify-content-md-center">
+            <div class="col-2 img-container">
+                <img src="{% static '/images/default-profile.jpg' %}" alt="User Image">
+            </div>
+            <div class="col-5 border">
+                {% if object.get_full_name %}
+                    <h3> {{ object.get_full_name }} </h3>
+                {% endif %}
+                {% if request.user.email %}
+                    <p>{{ object.email }}</p>
+                {% endif %}
+                {% if request.user.description %}
+                    <p>{{ request.user.description }}</p>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+    {% if is_owner %}
+        <div class="container text-center">
+            {% if is_owner %}
+                <a class="profile-edit-btn" href="{% url 'edit user' pk=request.user.pk %}">Edit</a>
+                <a class="profile-delete-btn" href="{% url 'delete user' pk=request.user.pk %}">Delete</a>
+            {% endif %}
+        </div>
+    {% endif %}
+
+
+{% endblock %}

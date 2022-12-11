@@ -1,0 +1,15 @@
+{% extends 'base.html'%}
+{% block content %}
+    <div class="row row-container justify-content-md-center">
+    <div class="container text-center" >
+        <div class="delete-title">
+            <h2>Are you sure you want to delete your profile</h2>
+        </div>
+        <form method="post" action="{% url 'delete user' pk=request.user.pk %}">
+
+            <button class="delete-profile-btn">Delete</button>
+            {% csrf_token %}
+        </form>
+    </div>
+    </div>
+{% endblock %}

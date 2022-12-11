@@ -1,0 +1,40 @@
+body {
+    background-image: url('../images/1123013.jpg');
+    background-position: center;
+}
+
+
+
+.register-form input {
+    margin-bottom: 15px;
+    border-radius: 10px;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+
+.create-btn {
+    margin: 20px;
+    border-radius: 12px;
+    width: 165px;
+    height: 37px;
+}
+
+.create-btn:hover {
+    color: red;
+    opacity: 0.8;
+}
+
+::placeholder {
+    text-align: center;
+}
+
+span {
+    display: none;
+}
+
+.register-form {
+    background-color: rgba(70, 77, 248, 0.63);
+    border-radius: 10px;
+    width: 300px;
+}

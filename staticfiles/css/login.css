@@ -1,0 +1,76 @@
+body {
+    background-image: url('../images/CRS_4763.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+
+}
+
+h2 {
+    margin-top: 20px;
+    margin-bottom: 25px;
+    font-weight: bold;
+    color: rgb(231, 179, 129);
+    text-shadow: 7px 7px 7px black;
+}
+
+.navbar {
+    margin-top: 10px;
+    width: 100%;
+    height: 50px;
+}
+
+.home-buttons {
+    width: 110px;
+    margin-left: 10px;
+    border: none;
+    color: gray;
+}
+
+.form-inline {
+    margin-left: 250px;
+}
+
+.form-group {
+    margin-top: 60px;
+}
+
+.form {
+    display: inline-block;
+}
+
+.form-group input {
+    padding: 1px 10px;
+    border-radius: 10px;
+    border: none;
+    box-shadow: 7px 7px 7px black;
+}
+
+.submit-btn {
+    padding: 1px 32px;
+    margin-top: 10px;
+    margin-left: 29px;
+    width: 140px;
+    border-radius: 10px;
+    box-shadow: 7px 7px 7px black;
+    border: none;
+}
+
+
+.home-button {
+    margin-top: 5px;
+    width: 110px;
+    margin-left: 10px;
+    border: none;
+    color: gray;
+}
+
+
+::placeholder {
+    text-align: center;
+}
+
+.error{
+    color: red;
+    font-size: 16px;
+}

@@ -1,0 +1,43 @@
+body {
+    background-image: url('../images/1123013.jpg');
+    background-position: center;
+}
+
+.add-photo {
+    width: 300px;
+    height: 380px;
+    background-color: rgba(70, 77, 248, 0.63);
+    border-radius: 10px;
+}
+
+.add-photo input {
+    margin-top: 20px
+}
+
+.add-event {
+    width: 300px;
+    height: 330px;
+    background-color: rgba(70, 77, 248, 0.63);
+    border-radius: 10px;
+}
+
+.add-event input {
+    margin-top: 20px;
+}
+
+
+label {
+    color: white;
+}
+
+
+.create-btn {
+    margin: 20px;
+    border-radius: 10px;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+::placeholder {
+    text-align: center;
+}

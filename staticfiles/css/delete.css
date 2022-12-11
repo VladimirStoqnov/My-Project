@@ -1,0 +1,29 @@
+body {
+    background-image: url('../images/1123013.jpg');
+    background-position: center;
+
+}
+
+.delete-title h2 {
+
+    color: brown;
+    font-weight: bold;
+    text-shadow: 7px 7px 7px black;
+}
+
+.delete-profile-btn{
+    color: white;
+    background-color: brown;
+    font-size: larger;
+    width: 200px;
+    height: 32px;
+    border-radius: 10px;
+    border: none;
+    box-shadow: 7px 7px 7px black;
+}
+
+.delete-profile-btn:hover {
+    opacity: 0.7;
+}
+
+  
