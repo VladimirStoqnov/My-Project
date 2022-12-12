@@ -30,13 +30,9 @@ img {
     height: 200px;
 }
 
-.photo-delete-btn a {
-    color:red;
-    font-size: larger;
-    text-decoration: none;
-}
-
-.photo-delete-btn a:hover {
-    opacity: 0.6;
-    color: green;
+.photo-delete-btn img {
+    background-color: transparent;
+    margin-top: 10px;
+    width: 40px;
+    height: auto;
 }

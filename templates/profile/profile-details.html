@@ -33,7 +33,9 @@
                 <img src="{{ photo.photo.url }}" alt="user images">
                 {% if is_owner %}
                     <div class="photo-delete-btn">
-                        <a href="{% url 'delete photo' pk=photo.pk %}">Delete</a>
+                        <a href="{% url 'delete photo' pk=photo.pk %}">
+                            <img src="{% static '/images/delete_bin.png.jpg' %}" alt="delete btn">
+                        </a>
                     </div>
                 {% endif %}
             </div>

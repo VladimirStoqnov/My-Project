@@ -35,13 +35,14 @@ def user_details(request, pk):
     user = AppUser.objects.filter(pk=pk).get()
     fullname = request.user.get_full_name()
     photos = Photo.objects.all()
+    is_owner = user == request.user
 
     user_photos = [photo for photo in photos if photo.user_id == user.pk]
 
     context = {
         'user': user,
         'fullname': fullname,
-        'is_owner': user == request.user,
+        'is_owner': is_owner,
         'user_photos': user_photos
 
     }
