@@ -2,9 +2,15 @@
 {% load static %}
 {% block content %}
     <div class="container text-center">
-        <div class="row row-container justify-content-md-center">
+        <div class="row row-container justify-content-md-center profile-delete">
             <div class="col-xxl-2 img-container">
                 <img src="{% static '/images/default-profile.jpg' %}" alt="User Image">
+                <a class="profile-edit" href="{% url 'edit user' pk=request.user.pk %}">
+                <button>Edit</button>
+                </a>
+                <a class="profile-delete" href="{% url 'delete user' pk=request.user.pk %}">
+                <button>Delete</button>
+                </a>
             </div>
             <div class="col-xxl-5 border profile-details">
                 {% if fullname %}
@@ -19,17 +25,9 @@
             </div>
         </div>
     </div>
-    {% if is_owner %}
-        <div class="container text-center">
-            {% if is_owner %}
-                <a class="profile-edit-btn" href="{% url 'edit user' pk=request.user.pk %}">Edit</a>
-                <a class="profile-delete-btn" href="{% url 'delete user' pk=request.user.pk %}">Delete</a>
-            {% endif %}
-        </div>
-    {% endif %}
     <div class="row row-container justify-content-md-center">
         {% for photo in user_photos %}
-            <div class="col-md text-center profile-page-photos">
+            <div class="col-md text-center row-container profile-page-photos">
                 <img src="{{ photo.photo.url }}" alt="user images">
                 {% if is_owner %}
                     <div class="photo-delete-btn">

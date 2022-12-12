@@ -1,13 +1,13 @@
 {% extends 'base.html' %}
 {% block content %}
     <div class="container text-center">
-        <div class="row row-container">
-            <h2>Edit</h2>
+        <div class="row row-container edit-profile-title">
+            <h3>Edit</h3>
             <div class="col">
                 <div>
                     <form method="post" action="{% url 'edit user' pk=request.user.pk %}">
                         {{ form.as_p }}
-                        <button class="create-btn" type="submit">Edit account</button>
+                        <button class="add-button" type="submit">Edit account</button>
                         {% csrf_token %}
                     </form>
                 </div>

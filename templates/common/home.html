@@ -8,20 +8,25 @@
 
         <div class="row row-container justify-content-md-center">
             {% for event in all_events %}
-                <div class="col-md-2 border">
+                <div class="col-md-2 border event-title ">
+                    <a href="{{ event.url }}">
+                        <div>{{ event.title }}</div>
+                        <div>{{ event.date_of_event }}</div>
+                    </a>
 
-                    <div class="event-title">
-                        <a href="{{ event.url }}">{{ event.title }}</a>
-                    </div>
-                    <div class="event-date">
-                        <p>
-                            {{ event.date_of_event }}
-                        </p>
-                    </div>
+{#                    <div class="event-date">#}
+{#                        <p>#}
+{#                            {{ event.date_of_event }}#}
+{#                        </p>#}
+{#                    </div>#}
                     {% if request.user.is_superuser or request.user.is_staff %}
                         <div class="event-delete">
-                            <a href="{% url 'edit event' pk=event.pk %}">Edit</a>
-                            <a href="{% url 'delete event' pk=event.pk %}">Delete</a>
+                            <a href="{% url 'edit event' pk=event.pk %}">
+                                <button>Edit</button>
+                            </a>
+                            <a href="{% url 'delete event' pk=event.pk %}">
+                                <button>Delete</button>
+                            </a>
                         </div>
                     {% endif %}
 

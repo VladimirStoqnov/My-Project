@@ -27,22 +27,23 @@
 
                 <li class="nav-item dropdown">
                     <a class="btn btn-outline-success home-button" href="{% url 'index' %}">Home</a>
-                    <li><a class="btn btn-outline-success home-button" href="{% url 'photo session' %}">PhotoSession</a></li>
+                <li><a class="btn btn-outline-success home-button" href="{% url 'photo session' %}">PhotoSession</a>
+                </li>
                 </li>
 
-{#                <li class="nav-item dropdown">#}
-{#                    <a class="btn btn-outline-success home-button" href="#" role="button" data-bs-toggle="dropdown"#}
-{#                       aria-expanded="false">#}
-{#                        More#}
-{#                    </a>#}
-{#                    <ul class="dropdown-menu">#}
-{#                        <li><a class="dropdown-item" href="#">Catalogue</a></li>#}
-{#                        <li><a class="dropdown-item" href="#">Album</a></li>#}
-{#                        <li><a class="dropdown-item" href="#">Music</a></li>#}
-{##}
-{##}
-{#                    </ul>#}
-{#                </li>#}
+                {#                <li class="nav-item dropdown">#}
+                {#                    <a class="btn btn-outline-success home-button" href="#" role="button" data-bs-toggle="dropdown"#}
+                {#                       aria-expanded="false">#}
+                {#                        More#}
+                {#                    </a>#}
+                {#                    <ul class="dropdown-menu">#}
+                {#                        <li><a class="dropdown-item" href="#">Catalogue</a></li>#}
+                {#                        <li><a class="dropdown-item" href="#">Album</a></li>#}
+                {#                        <li><a class="dropdown-item" href="#">Music</a></li>#}
+                {##}
+                {##}
+                {#                    </ul>#}
+                {#                </li>#}
 
 
             </ul>
@@ -78,26 +79,28 @@
         </div>
     </div>
 </nav>
-<form class="form-group container text-left" method="post" action="{% url 'sign in' %}">
+<div class="container" >
+    <form class="form-group" method="post" action="{% url 'sign in' %}">
 
-    <h2>Welcome</h2>
-    {% if form.errors %}
-        <h5 class="error-login-message" >Wrong Username or Password</h5>
-    {% endif %}
-    <p>
-        {{ form.username|placeholder:'Username' }}
+        <h2>Welcome</h2>
+        {% if form.errors %}
+            <h5 class="error-login-message">Wrong Username or Password</h5>
+        {% endif %}
+        <p>
+            {{ form.username|placeholder:'Username' }}
 
-    </p>
-    <p>
-        {{ form.password|placeholder:'Password' }}
+        </p>
+        <p>
+            {{ form.password|placeholder:'Password' }}
 
-    </p>
+        </p>
 
-    <input type="hidden" name="next" value="{{ next }}">
-    <button class="submit-btn" type="submit">Login</button>
+        <input type="hidden" name="next" value="{{ next }}">
+        <button class="submit-btn" type="submit">Login</button>
 
-    {% csrf_token %}
+        {% csrf_token %}
 
-</form>
+    </form>
+</div>
 </body>
 </html>

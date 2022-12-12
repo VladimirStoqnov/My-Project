@@ -21,6 +21,8 @@ body {
 }
 
 .home-buttons {
+    margin-top:5px;
+    background-color: rgb(248 249 250);
     width: 110px;
     margin-left: 10px;
     border: none;
@@ -29,15 +31,15 @@ body {
 
 .form-group {
     margin-top: 60px;
-    margin-left: 250px;
 }
 
-.form-group h2{
-    margin-left: 40px;
+.form-group h2 {
+    margin-left: 75px;
 
 }
 
 .form-group input {
+    margin-left: 50px;
     margin-top: 10px;
     padding: 1px 10px;
     border-radius: 10px;
@@ -46,9 +48,10 @@ body {
 }
 
 .submit-btn {
+
     padding: 1px 32px;
     margin-top: 10px;
-    margin-left: 37px;
+    margin-left: 80px;
     width: 140px;
     border-radius: 10px;
     box-shadow: 7px 7px 7px black;
@@ -57,6 +60,7 @@ body {
 
 
 .home-button {
+    background-color: rgb(248 249 250);
     margin-top: 5px;
     width: 110px;
     margin-left: 10px;

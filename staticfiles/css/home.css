@@ -28,18 +28,19 @@ body {
     opacity: 0.8;
 }
 
-.photo-delete a,
-.event-delete a {
-    font-size: 18px;
-    color: white;
-    text-decoration: none;
-    margin-left: 10px;
+.profile-delete button,
+.event-delete button {
+    padding: 1px 20px;
+    border-color:red;
+    border-radius: 10px;
+    margin-top: 10px;
+    margin-bottom: 10px;
 }
 
-.photo-delete a:hover,
-.event-delete a:hover {
+.profile-delete button:hover,
+.event-delete button:hover {
     color: red;
-    opacity: 0.5;
+    opacity: 0.7;
 }
 
 .home-photo {
@@ -53,12 +54,19 @@ body {
     color:red;
 }
 
-.event-date,
-.add-photo,
-.profile-details,
-.add-event,
-.photo-session-title h3 {
-    color: white;
+.add-button {
+    padding: 2px 25px;
+    border-radius: 10px;
+}
+
+.add-button:hover {
+    color: green;
+    opacity: 0.7;
+}
+
+h3 {
+
+    color:white;
 }
 
 .username-container h2 {
@@ -67,12 +75,6 @@ body {
 
 .profile-details p {
     color: white;
-}
-
-
-.add-event h3 {
-    margin-bottom: 30px;
-    color: white
 }
 
 .title-home {
