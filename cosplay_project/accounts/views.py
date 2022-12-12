@@ -1,10 +1,10 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.urls import reverse_lazy
 from django.views import generic as views
 from django.contrib.auth import views as auth_views, get_user_model, login
 
-from cosplay_project.accounts.forms import UserCreateForm, EventForm
-from cosplay_project.accounts.models import Event
+from cosplay_project.accounts.forms import UserCreateForm, EventForm, UserDetailsForm
+from cosplay_project.accounts.models import Event, AppUser
 from cosplay_project.photo.models import Photo
 
 UserModel = get_user_model()
@@ -31,16 +31,22 @@ class SignOutView(auth_views.LogoutView):
     next_page = reverse_lazy('sign in')
 
 
-class UserDetailsView(views.DetailView):
-    template_name = 'profile/profile-details.html'
-    model = UserModel
+def user_details(request, pk):
+    user = AppUser.objects.filter(pk=pk).get()
+    fullname = request.user.get_full_name()
+    photos = Photo.objects.all()
 
-    def get_context_data(self, **kwargs):
-        context = super().get_context_data(**kwargs)
+    user_photos = [photo for photo in photos if photo.user_id == user.pk]
 
-        context['is_owner'] = self.request.user == self.object
+    context = {
+        'user': user,
+        'fullname': fullname,
+        'is_owner': user == request.user,
+        'user_photos': user_photos
 
-        return context
+    }
+
+    return render(request, 'profile/profile-details.html', context)
 
 
 class UserEditView(views.UpdateView):

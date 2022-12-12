@@ -50,4 +50,8 @@ def add_photo_sessions(request):
 class DeletePhotoView(views.DeleteView):
     template_name = 'photo/delete-photo.html'
     model = Photo
-    success_url = reverse_lazy('index')
+
+    def get_success_url(self):
+        return reverse_lazy('details user', kwargs={
+            'pk': self.request.user.pk,
+        })

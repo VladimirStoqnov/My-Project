@@ -18,5 +18,25 @@ img {
     margin-left:20px;
     color:red;
     font-size: x-large;
-    text-decoration-line: none;
+    text-decoration: none;
+}
+
+.profile-page-photos {
+    display: inline;
+}
+
+.profile-page-photos img {
+    width: 200px;
+    height: 200px;
+}
+
+.photo-delete-btn a {
+    color:red;
+    font-size: larger;
+    text-decoration: none;
+}
+
+.photo-delete-btn a:hover {
+    opacity: 0.6;
+    color: green;
 }

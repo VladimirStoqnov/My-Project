@@ -21,6 +21,12 @@ class UserCreateForm(auth_forms.UserCreationForm):
         fields_class = {'username': auth_forms.UsernameField}
 
 
+class UserDetailsForm(forms.ModelForm):
+    class Meta:
+        model = UserModel
+        fields = '__all__'
+
+
 class DateInput(forms.DateInput):
     input_type = 'date'
 

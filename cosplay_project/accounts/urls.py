@@ -1,7 +1,7 @@
 from django.urls import path, include
 
-from cosplay_project.accounts.views import index, SignInView, SignUpView, SignOutView, UserDetailsView, UserEditView, \
-    UserDeleteView, EventCreateView, EventEditView, EventDeleteView
+from cosplay_project.accounts.views import index, SignInView, SignUpView, SignOutView, UserEditView, \
+    UserDeleteView, EventCreateView, EventEditView, EventDeleteView, user_details
 
 urlpatterns = (
     path('', index, name='index'),
@@ -9,7 +9,7 @@ urlpatterns = (
     path('register/', SignUpView.as_view(), name='sign up'),
     path('logout/', SignOutView.as_view(), name='logout user'),
     path('profile/<int:pk>/', include([
-        path('', UserDetailsView.as_view(), name='details user'),
+        path('', user_details, name='details user'),
         path('edit/', UserEditView.as_view(), name='edit user'),
         path('delete/', UserDeleteView.as_view(), name='delete user'),
     ])),

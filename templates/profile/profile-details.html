@@ -3,15 +3,15 @@
 {% block content %}
     <div class="container text-center">
         <div class="row row-container justify-content-md-center">
-            <div class="col-2 img-container">
+            <div class="col-xxl-2 img-container">
                 <img src="{% static '/images/default-profile.jpg' %}" alt="User Image">
             </div>
-            <div class="col-5 border profile-details">
-                {% if object.get_full_name %}
-                    <h3> {{ object.get_full_name }} </h3>
+            <div class="col-xxl-5 border profile-details">
+                {% if fullname %}
+                    <h3> {{ user.first_name }} {{ user.last_name }}</h3>
                 {% endif %}
                 {% if request.user.email %}
-                    <p>{{ object.email }}</p>
+                    <p>{{ request.user.email }}</p>
                 {% endif %}
                 {% if request.user.description %}
                     <p>{{ request.user.description }}</p>
@@ -27,6 +27,18 @@
             {% endif %}
         </div>
     {% endif %}
+    <div class="row row-container justify-content-md-center">
+        {% for photo in user_photos %}
+            <div class="col-md text-center profile-page-photos">
+                <img src="{{ photo.photo.url }}" alt="user images">
+                {% if is_owner %}
+                    <div class="photo-delete-btn">
+                        <a href="{% url 'delete photo' pk=photo.pk %}">Delete</a>
+                    </div>
+                {% endif %}
+            </div>
+        {% endfor %}
+    </div>
 
 
 {% endblock %}
