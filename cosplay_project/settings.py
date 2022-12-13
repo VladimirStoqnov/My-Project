@@ -9,7 +9,7 @@ https://docs.djangoproject.com/en/4.1/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/4.1/ref/settings/
 """
-
+import os
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -78,10 +78,31 @@ WSGI_APPLICATION = 'cosplay_project.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'cosplay_db',
+        'USER': 'postgres',
+        'PASSWORD': '07068613vlady',
+        'HOST': '127.0.0.1',
+        'PORT': '5432',
     }
 }
+
+if DEBUG:
+    CACHES = {
+        'default': {
+            'BACKEND':
+                'django.core.cache.backends.dummy.DummyCache',
+        }
+    }
+else:
+    CACHES = {
+        'default': {
+            'BACKEND':
+                'django.core.cache.backends.redis.RedisCache',
+            'LOCATION':
+                '127.0.0.1:6379',
+        },
+    }
 
 # Password validation
 # https://docs.djangoproject.com/en/4.1/ref/settings/#auth-password-validators
@@ -132,9 +153,18 @@ MEDIA_ROOT = BASE_DIR / 'mediafiles'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
-
 LOGIN_URL = reverse_lazy('sign in')
 LOGIN_REDIRECT_URL = reverse_lazy('index')
 
 AUTH_USER_MODEL = 'accounts.AppUser'
+
+# RaweVc6Z3CbPNzF
+
+EMAIL_USE_TLS = True
+EMAIL_HOST = 'in-v3.mailjet.com'
+EMAIL_HOST_USER = 'info.cosplaiy@gmail.com'
+EMAIL_HOST_PASSWORD = 'RaweVc6Z3CbPNzF'
+EMAIL_PORT = 587
+
+
+DEFAULT_FROM_EMAIL = 'info.cosplaiy@gmail.com'
