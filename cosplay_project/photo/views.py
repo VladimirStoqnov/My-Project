@@ -47,6 +47,12 @@ def add_photo_sessions(request):
     return render(request, 'photo_session/photo_session.html', context)
 
 
+class DetailsPhotoView(views.DetailView):
+    model = Photo
+    queryset = Photo.objects.all()
+    template_name = 'photo/details-photo.html'
+
+
 class DeletePhotoView(views.DeleteView):
     template_name = 'photo/delete-photo.html'
     model = Photo

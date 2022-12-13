@@ -1,10 +1,10 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render
 from django.urls import reverse_lazy
 from django.views import generic as views
 from django.contrib.auth import views as auth_views, get_user_model, login
 
-from cosplay_project.accounts.forms import UserCreateForm, EventForm, UserDetailsForm
-from cosplay_project.accounts.models import Event, AppUser
+from cosplay_project.accounts.forms import UserCreateForm, EventForm
+from cosplay_project.accounts.models import Event
 from cosplay_project.photo.models import Photo
 
 UserModel = get_user_model()
@@ -32,7 +32,7 @@ class SignOutView(auth_views.LogoutView):
 
 
 def user_details(request, pk):
-    user = AppUser.objects.filter(pk=pk).get()
+    user = UserModel.objects.filter(pk=pk).get()
     fullname = request.user.get_full_name()
     photos = Photo.objects.all()
     is_owner = user == request.user

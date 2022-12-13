@@ -25,6 +25,12 @@ img {
     display: inline;
 }
 
+.details-photo img {
+    width: 60%;
+    height:auto;
+
+}
+
 .profile-page-photos img {
     width: 200px;
     height: 200px;
