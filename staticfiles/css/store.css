@@ -67,3 +67,10 @@
 .add-store-item textarea {
     width: 90%;
 }
+
+.page-numbering {
+    background-color: white;
+    margin-top: 10px;
+    border-radius: 6px;
+    width: 220px;
+}
