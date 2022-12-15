@@ -21,6 +21,12 @@ body {
     border-radius: 10px;
 }
 
+
+
+.add-store-item textarea {
+    width: 90%;
+}
+
 .add-event input {
     margin-top: 30px;
 }

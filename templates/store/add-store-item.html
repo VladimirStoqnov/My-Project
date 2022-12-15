@@ -1,14 +1,13 @@
 {% extends 'base.html' %}
-{% load placeholders %}
 {% block content %}
     <div class="container text-center">
         <div class="row row-container">
-            <form method="post" action="{% url 'details event' %}">
-                <div class="container text-center event-details">
-                    <h3>Edit Event</h3>
+            <form method="post" action="{% url 'add item' %}">
+                <div class="container add-store-item">
+                    <h3>Please add item in Store</h3>
                     {{ form.as_p }}
                     {% csrf_token %}
-                    <button class="add-button" type="submit">Edit</button>
+                    <button class="add-button" type="submit">Add</button>
                 </div>
             </form>
         </div>

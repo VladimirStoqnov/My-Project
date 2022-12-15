@@ -1,0 +1,54 @@
+{% extends 'base.html' %}
+{% block content %}
+    <div class="container text-center">
+        <div class="row row-container">
+            <form method="post" action="{% url 'store' %}">
+                <div class="store-title">
+                    <h2>Store</h2>
+                </div>
+
+            </form>
+        </div>
+        <div class="row row-container justify-content-md-center">
+            <div class="container item-box">
+                <div class="row buttons-row">
+                    <div class="col store-add-btn">
+                        <a href="{% url 'add item' %}">Add Item</a>
+                    </div>
+                </div>
+                <div class="col">
+                    {% for item in items %}
+                        <div class="row class">
+                            <div class="col-2 store-item">
+                                <img src="{{ item.image }}" alt="Home Page Image">
+                                <div>
+                                    <a href="{% url 'edit item' pk=item.pk %}">Edit</a>
+                                    <a href="{% url 'delete item' pk=item.pk %}">Delete</a>
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="item-name">
+                                    {{ item.item_name }}
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="item-name">
+                                    {{ item.description }}
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="item-name">
+                                    {{ item.price }} BGN.
+                                </div>
+                            </div>
+                        </div>
+
+                    {% endfor %}
+
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+{% endblock %}

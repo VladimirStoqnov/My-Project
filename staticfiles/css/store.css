@@ -1,0 +1,55 @@
+.store-item img {
+    width: 80px;
+    height: 80px;
+}
+
+.store-item {
+    margin-top: 20px;
+}
+
+.store-item a {
+    color: red;
+    margin-left: 10px;
+    text-decoration: none;
+}
+
+.add-store-item {
+    width: 300px;
+    height: 600px;
+    background-color: rgba(70, 77, 248, 0.63);
+    border-radius: 10px;
+}
+
+.items-col {
+    height: 600px;
+}
+
+.buttons-row {
+    height: 40px;
+}
+
+.category-btn a,
+.store-add-btn a {
+    padding: 1px 10px;
+    text-decoration: none;
+    border-radius: 6px;
+    background-color:white;
+    color: black
+}
+
+.item-name {
+    color: white;
+}
+
+.item-box {
+    border: solid 7px rgba(70, 77, 248, 0.63);
+}
+
+.category-btn,
+.store-add-btn {
+    background-color: rgba(70, 77, 248, 0.63);
+}
+
+.store-title h2 {
+    color: rgb(231, 179, 129);
+}

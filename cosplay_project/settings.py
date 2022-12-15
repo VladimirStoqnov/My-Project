@@ -44,6 +44,7 @@ INSTALLED_APPS = [
 
     'cosplay_project.accounts',
     'cosplay_project.photo',
+    'cosplay_project.store',
 ]
 
 MIDDLEWARE = [
@@ -161,14 +162,3 @@ LOGIN_URL = reverse_lazy('sign in')
 LOGIN_REDIRECT_URL = reverse_lazy('index')
 
 AUTH_USER_MODEL = 'accounts.AppUser'
-
-# RaweVc6Z3CbPNzF
-
-EMAIL_USE_TLS = True
-EMAIL_HOST = 'in-v3.mailjet.com'
-EMAIL_HOST_USER = 'info.cosplaiy@gmail.com'
-EMAIL_HOST_PASSWORD = 'RaweVc6Z3CbPNzF'
-EMAIL_PORT = 587
-
-
-DEFAULT_FROM_EMAIL = 'info.cosplaiy@gmail.com'

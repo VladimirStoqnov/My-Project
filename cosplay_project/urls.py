@@ -22,6 +22,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('cosplay_project.accounts.urls')),
     path('home_photos/', include('cosplay_project.photo.urls')),
+    path('store/', include('cosplay_project.store.urls')),
 ]
 
 if settings.DEBUG:
