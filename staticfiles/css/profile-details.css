@@ -6,11 +6,11 @@ img {
     height: 200px;
 }
 
-.profile-edit-btn,
-.profile-delete-btn {
+.profile-edit,
+.profile-delete {
     margin-left:20px;
     color:red;
-    font-size: x-large;
+    font-size: large;
     text-decoration: none;
 }
 

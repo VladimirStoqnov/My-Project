@@ -16,12 +16,11 @@ body {
 }
 
 .profile-delete button,
-.event-delete button {
-    padding: 1px 20px;
-    border-color:red;
-    border-radius: 10px;
-    margin-top: 10px;
-    margin-bottom: 10px;
+.event-delete {
+    color:red;
+    margin-left: 10px;
+    text-decoration: none;
+    font-size: larger;
 }
 
 .profile-delete button:hover,
