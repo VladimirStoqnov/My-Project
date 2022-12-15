@@ -45,12 +45,25 @@
     border: solid 7px rgba(70, 77, 248, 0.63);
 }
 
-.category-btn,
 .store-add-btn {
+    padding-top: 5px;
     background-color: rgba(70, 77, 248, 0.63);
+}
+
+.store-add-btn a {
+    padding: 2px 25px;
+}
+
+.store-add-btn a:hover {
+    color: green;
+    opacity: 0.7;
 }
 
 .store-title h2 {
     color: rgb(231, 179, 129);
     font-weight: bold;
+}
+
+.add-store-item textarea {
+    width: 90%;
 }

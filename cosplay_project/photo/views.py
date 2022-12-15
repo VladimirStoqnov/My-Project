@@ -29,7 +29,7 @@ def add_photo(request):
     return render(request, 'photo/add_photo.html', context)
 
 
-@login_required(login_url='sign in')
+@login_required()
 def add_photo_sessions(request):
     if request.method == 'GET':
         form = PhotoSessionForm()

@@ -1,0 +1,22 @@
+.add-event {
+    width: 300px;
+    height: 335px;
+    background-color: rgba(70, 77, 248, 0.63);
+    border-radius: 10px;
+}
+
+
+.add-event input {
+    margin-top: 30px;
+}
+
+.event-title a {
+    font-size: 18px;
+    color: white;
+    text-decoration: none;
+}
+
+.event-title a:hover {
+    color: green;
+    opacity: 0.8;
+}

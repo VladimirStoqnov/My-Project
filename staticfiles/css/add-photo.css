@@ -1,8 +1,3 @@
-body {
-    background-image: url('../images/1123013.jpg');
-    background-position: center;
-}
-
 .add-photo {
     width: 300px;
     height: 380px;
@@ -13,24 +8,6 @@ body {
 .add-photo input {
     margin-top: 30px
 }
-
-.add-event {
-    width: 300px;
-    height: 335px;
-    background-color: rgba(70, 77, 248, 0.63);
-    border-radius: 10px;
-}
-
-
-
-.add-store-item textarea {
-    width: 90%;
-}
-
-.add-event input {
-    margin-top: 30px;
-}
-
 
 label {
     color: white;

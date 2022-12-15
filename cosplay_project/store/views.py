@@ -1,3 +1,4 @@
+from django.contrib.auth.decorators import login_required
 from django.shortcuts import render, redirect
 from django.urls import reverse_lazy
 from django.views import generic as views
@@ -5,6 +6,7 @@ from cosplay_project.store.forms import ItemCreateFrom
 from cosplay_project.store.models import Items
 
 
+@login_required()
 def store(request):
     items = Items.objects.all()
 

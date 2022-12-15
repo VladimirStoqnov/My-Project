@@ -9,23 +9,10 @@ body {
     margin-top: 10px;
     width: 100%;
     height: 50px;
-
-
 }
 
 .row-container {
     padding-top: 60px;
-}
-
-.event-title a {
-    font-size: 18px;
-    color: white;
-    text-decoration: none;
-}
-
-.event-title a:hover {
-    color: green;
-    opacity: 0.8;
 }
 
 .profile-delete button,
@@ -54,30 +41,24 @@ body {
     color:red;
 }
 
-.add-button {
-    padding: 2px 25px;
-    border-radius: 10px;
-}
+/*.add-button {*/
+/*    padding: 2px 25px;*/
+/*    border-radius: 10px;*/
+/*}*/
 
-.add-button:hover {
-    color: green;
-    opacity: 0.7;
+/*.add-button:hover {*/
+/*    color: green;*/
+/*    opacity: 0.7;*/
+/*}*/
+
+.title-home {
+    color:white;
 }
 
 h3 {
-
     color:white;
 }
 
 .username-container h2 {
     color: rgb(231, 179, 129);
 }
-
-.profile-details p {
-    color: white;
-}
-
-.title-home {
-    color: white;
-}
-

@@ -5,12 +5,14 @@
         <div class="row row-container justify-content-md-center profile-delete">
             <div class="col-xxl-2 img-container">
                 <img src="{% static '/images/default-profile.jpg' %}" alt="User Image">
-                <a class="profile-edit" href="{% url 'edit user' pk=request.user.pk %}">
-                    <button>Edit</button>
-                </a>
-                <a class="profile-delete" href="{% url 'delete user' pk=request.user.pk %}">
-                    <button>Delete</button>
-                </a>
+                {% if user.is_owner %}
+                    <a class="profile-edit" href="{% url 'edit user' pk=request.user.pk %}">
+                        <button>Edit</button>
+                    </a>
+                    <a class="profile-delete" href="{% url 'delete user' pk=request.user.pk %}">
+                        <button>Delete</button>
+                    </a>
+                {% endif %}
             </div>
             <div class="col-xxl-5 border profile-details">
                 {% if fullname %}

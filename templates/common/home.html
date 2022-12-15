@@ -9,7 +9,7 @@
         <div class="row row-container justify-content-md-center">
             {% for event in all_events %}
                 <div class="col-md-2 border event-title ">
-                    <a href="{{ event.url }}">
+                    <a href="{{ event.url }}" target='_blank'>
                         <div>{{ event.title }}</div>
                         <div>{{ event.date_of_event }}</div>
                     </a>
@@ -47,7 +47,7 @@
 
         </div>
     {% else %}
-        <div class="container-fluid text-center">
+        <div class="container-fluid text-center ">
             <h1 class="title-home">Please Login or Register</h1>
         </div>
     {% endif %}
