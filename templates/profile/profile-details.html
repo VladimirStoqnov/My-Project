@@ -5,7 +5,7 @@
         <div class="row row-container justify-content-md-center profile-delete">
             <div class="col-xxl-2 img-container">
                 <img src="{% static '/images/default-profile.jpg' %}" alt="User Image">
-                {% if user.is_owner %}
+                {% if is_owner %}
                     <a class="profile-edit" href="{% url 'edit user' pk=request.user.pk %}">
                         <button>Edit</button>
                     </a>

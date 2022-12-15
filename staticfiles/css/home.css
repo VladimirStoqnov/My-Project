@@ -41,15 +41,15 @@ body {
     color:red;
 }
 
-/*.add-button {*/
-/*    padding: 2px 25px;*/
-/*    border-radius: 10px;*/
-/*}*/
+.add-button {
+    padding: 2px 25px;
+    border-radius: 10px;
+}
 
-/*.add-button:hover {*/
-/*    color: green;*/
-/*    opacity: 0.7;*/
-/*}*/
+.add-button:hover {
+    color: green;
+    opacity: 0.7;
+}
 
 .title-home {
     color:white;
@@ -61,4 +61,8 @@ h3 {
 
 .username-container h2 {
     color: rgb(231, 179, 129);
+}
+
+.home-info {
+    margin-top: 50px;
 }

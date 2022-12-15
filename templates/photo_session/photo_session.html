@@ -12,6 +12,7 @@
                     <p>
                         {{ form.description|placeholder:'Description' }}
                     </p>
+                    {#TODO: send email when photo session is booked#}
                     {% csrf_token %}
                     <button class="add-button" type="submit">Reserve</button>
                 </div>

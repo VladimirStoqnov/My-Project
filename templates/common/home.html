@@ -14,11 +14,11 @@
                         <div>{{ event.date_of_event }}</div>
                     </a>
 
-{#                    <div class="event-date">#}
-{#                        <p>#}
-{#                            {{ event.date_of_event }}#}
-{#                        </p>#}
-{#                    </div>#}
+                    {#                    <div class="event-date">#}
+                    {#                        <p>#}
+                    {#                            {{ event.date_of_event }}#}
+                    {#                        </p>#}
+                    {#                    </div>#}
                     {% if request.user.is_superuser or request.user.is_staff %}
                         <div class="event-delete">
                             <a href="{% url 'edit event' pk=event.pk %}">
@@ -36,8 +36,8 @@
 
         <div class="row row-container justify-content-md-center">
             {% for photo in all_photos %}
-                <div class="username-container" >
-                    <h2>{{ photo.user.username }}</h2>
+                <div class="username-container">
+                <h2>{{ photo.user.username }}</h2>
                 <div class="col-xs justify-content-md-center">
                     <img class="home-photo" src="media/{{ photo.photo }}" alt="Home Page Image">
                 </div>
@@ -47,8 +47,24 @@
 
         </div>
     {% else %}
-        <div class="container-fluid text-center ">
+        <div class="row container-fluid text-center home-info">
             <h1 class="title-home">Please Login or Register</h1>
+        </div>
+        <div class="row container-fluid text-center">
+            <p>&nbsp;</p>
+            <p>&nbsp;</p>
+            <h3>This is a cosplay community which is crated for people to share their passion and life experiences.</h3>
+            <p>&nbsp;</p>
+            <h3>You can share photos from events with other people.</h3>
+            <p>&nbsp;</p>
+            <h3>You can book a photo session with professional Photographer</h3>
+            <p>&nbsp;</p>
+            <h3>or</h3>
+            <p>&nbsp;</p>
+            <h3>visit our store and buy cosplay items.</h3>
+            <p>&nbsp;</p>
+            <h3>Thank you for visiting our site!</h3>
+
         </div>
     {% endif %}
 {% endblock %}

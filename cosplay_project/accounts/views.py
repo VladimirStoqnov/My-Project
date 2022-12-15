@@ -36,7 +36,6 @@ def user_details(request, pk):
     fullname = request.user.get_full_name()
     photos = Photo.objects.all()
 
-
     user_photos = [photo for photo in photos if photo.user_id == user.pk]
 
     context = {
