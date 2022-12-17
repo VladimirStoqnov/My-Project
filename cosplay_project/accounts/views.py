@@ -79,19 +79,19 @@ def index(request):
 
 
 class EventCreateView(views.CreateView):
-    template_name = 'event/add-event.html'
+    template_name = 'event/event-add.html'
     success_url = '/'
     form_class = EventForm
 
 
 class EventEditView(views.UpdateView):
-    template_name = 'event/edit-event.html'
+    template_name = 'event/event-edit.html'
     fields = ('title', 'date_of_event', 'url')
     model = Event
     success_url = '/'
 
 
 class EventDeleteView(views.DeleteView):
-    template_name = 'event/delete-event.html'
+    template_name = 'event/event-delete.html'
     model = Event
     success_url = reverse_lazy('index')

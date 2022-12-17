@@ -26,7 +26,7 @@ def add_photo(request):
         'form': form,
     }
 
-    return render(request, 'photo/add_photo.html', context)
+    return render(request, 'photo/photo-add.html', context)
 
 
 @login_required()
@@ -50,11 +50,11 @@ def add_photo_sessions(request):
 class DetailsPhotoView(views.DetailView):
     model = Photo
     queryset = Photo.objects.all()
-    template_name = 'photo/details-photo.html'
+    template_name = 'photo/photo-details.html'
 
 
 class DeletePhotoView(views.DeleteView):
-    template_name = 'photo/delete-photo.html'
+    template_name = 'photo/photo-delete.html'
     model = Photo
 
     def get_success_url(self):

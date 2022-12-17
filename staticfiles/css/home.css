@@ -17,7 +17,7 @@ body {
 
 .profile-delete button,
 .event-delete {
-    color:red;
+    color: red;
     margin-left: 10px;
     text-decoration: none;
     font-size: larger;
@@ -37,7 +37,7 @@ body {
 }
 
 .photo-delete a {
-    color:red;
+    color: red;
 }
 
 .add-button {
@@ -51,11 +51,11 @@ body {
 }
 
 .title-home {
-    color:white;
+    color: white;
 }
 
 h3 {
-    color:white;
+    color: white;
     opacity: 0.7
 }
 
@@ -65,4 +65,8 @@ h3 {
 
 .home-info {
     margin-top: 50px;
+}
+
+.errorlist {
+    color: white;
 }

@@ -14,11 +14,6 @@
                         <div>{{ event.date_of_event }}</div>
                     </a>
 
-                    {#                    <div class="event-date">#}
-                    {#                        <p>#}
-                    {#                            {{ event.date_of_event }}#}
-                    {#                        </p>#}
-                    {#                    </div>#}
                     {% if request.user.is_superuser or request.user.is_staff %}
                         <div >
                             <a class="event-delete" href="{% url 'edit event' pk=event.pk %}">Edit</a>

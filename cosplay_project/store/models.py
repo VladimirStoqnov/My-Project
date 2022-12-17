@@ -25,7 +25,7 @@ class Type(ChoicesEnumMixin, Enum):
 
 class Items(models.Model):
     ITEM_NAME_LENGTH = 30
-    DESCRIPTION_LENGTH = 300
+    DESCRIPTION_LENGTH = 100
 
     item_name = models.CharField(
         max_length=ITEM_NAME_LENGTH,
@@ -50,7 +50,7 @@ class Items(models.Model):
 
     user = models.ForeignKey(
         UserModel,
-        on_delete=models.RESTRICT,
+        on_delete=models.CASCADE,
         null=False,
         blank=False,
     )

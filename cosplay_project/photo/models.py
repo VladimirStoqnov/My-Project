@@ -52,7 +52,7 @@ class PhotoSession(models.Model):
 
     user = models.ForeignKey(
         UserModel,
-        on_delete=models.RESTRICT,
+        on_delete=models.CASCADE,
     )
 
     def __str__(self):

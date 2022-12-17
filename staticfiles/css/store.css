@@ -28,6 +28,7 @@
     height: 40px;
 }
 
+
 .category-btn a,
 .store-add-btn a {
     padding: 1px 10px;
@@ -35,6 +36,23 @@
     border-radius: 6px;
     background-color:white;
     color: black
+}
+
+.store-add-basket-btn {
+    margin-top: 30px;
+}
+
+.store-add-basket-btn a {
+    padding: 2px 15px;
+    text-decoration: none;
+    border-radius: 6px;
+    background-color:white;
+    color: black
+}
+
+.store-add-basket-btn a:hover {
+    color: green;
+    opacity: 0.7;
 }
 
 .item-name {
@@ -74,3 +92,10 @@
     border-radius: 6px;
     width: 220px;
 }
+
+.store-quantity input {
+    width: 50px;
+    height: 30px;
+    margin-top: 30px
+}
+

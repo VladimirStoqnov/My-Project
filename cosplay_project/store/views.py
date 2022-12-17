@@ -30,11 +30,11 @@ def add_item(request):
         'form': form,
     }
 
-    return render(request, 'store/add-store-item.html', context)
+    return render(request, 'store/store-add-item.html', context)
 
 
 class EditStoreItem(views.UpdateView):
-    template_name = 'store/edit-store-item.html'
+    template_name = 'store/store-edit-item.html'
     model = Items
     fields = ('item_name', 'description', 'price', 'image', 'type')
 
