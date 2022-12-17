@@ -12,8 +12,12 @@ UserModel = get_user_model()
 class UserAdmin(auth_admin.UserAdmin):
     form = UserEditForm
     add_form = UserCreateForm
+    ordering = ['username', ]
+    list_filter = ['first_name', 'last_name', 'email', 'groups']
 
 
 @admin.register(Event)
 class EventAdmin(admin.ModelAdmin):
-    pass
+    ordering = ['title', ]
+    list_display = ['title', 'date_of_event']
+    list_filter = ['title', 'date_of_event']

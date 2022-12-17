@@ -46,6 +46,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 
+    'rest_framework',
+
     'cosplay_project.accounts',
     'cosplay_project.photo',
     'cosplay_project.store',
@@ -172,3 +174,4 @@ cloudinary.config(
     api_key="834617571258362",
     api_secret="P6DygcymRm6z4r7y_37ptBiWI7Y"
 )
+

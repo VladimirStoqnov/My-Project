@@ -6,17 +6,6 @@ from cosplay_project.store.forms import ItemCreateFrom
 from cosplay_project.store.models import Items
 
 
-# @login_required()
-# def store(request):
-#     items = Items.objects.all()
-#
-#     context = {
-#         'items': items,
-#
-#     }
-#
-#     return render(request, 'store/store-home.html', context)
-
 class StoreHomeView(views.ListView):
     model = Items
     template_name = 'store/store-home.html'
@@ -24,7 +13,7 @@ class StoreHomeView(views.ListView):
     paginate_by = 4
 
 
-
+@login_required()
 def add_item(request):
     if request.method == 'GET':
         form = ItemCreateFrom()

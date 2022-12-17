@@ -23,6 +23,8 @@ urlpatterns = [
     path('', include('cosplay_project.accounts.urls')),
     path('home_photos/', include('cosplay_project.photo.urls')),
     path('store/', include('cosplay_project.store.urls')),
+
+    path('api-auth/', include('rest_framework.urls')),
 ]
 
 if settings.DEBUG:
