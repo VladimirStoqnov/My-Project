@@ -53,3 +53,6 @@ class Event(models.Model):
     title = models.CharField(max_length=50,)
     date_of_event = models.DateField()
     url = models.URLField(max_length=255)
+
+    def __str__(self):
+        return f'{self.title} is added with date {self.date_of_event}'

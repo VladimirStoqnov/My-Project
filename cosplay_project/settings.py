@@ -13,6 +13,10 @@ https://docs.djangoproject.com/en/4.1/ref/settings/
 import os
 from pathlib import Path
 
+import cloudinary
+import cloudinary.uploader
+import cloudinary.api
+
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 from django.urls import reverse_lazy
 
@@ -162,3 +166,9 @@ LOGIN_URL = reverse_lazy('sign in')
 LOGIN_REDIRECT_URL = reverse_lazy('index')
 
 AUTH_USER_MODEL = 'accounts.AppUser'
+
+cloudinary.config(
+    cloud_name="dfj3kg8nh",
+    api_key="834617571258362",
+    api_secret="P6DygcymRm6z4r7y_37ptBiWI7Y"
+)

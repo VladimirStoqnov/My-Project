@@ -1,3 +1,4 @@
+from cloudinary.models import CloudinaryField
 from django.contrib.auth import get_user_model
 from django.db import models
 
@@ -12,11 +13,7 @@ class Photo(models.Model):
 
     MAX_LOCATION_LENGTH = 30
 
-    photo = models.ImageField(
-        upload_to='user_photos/',
-        null=False,
-        blank=True,
-    )
+    photo = CloudinaryField('image')
 
     description = models.CharField(
 
@@ -42,6 +39,9 @@ class Photo(models.Model):
         on_delete=models.CASCADE,
     )
 
+    def __str__(self):
+        return f'{self.user} added photo on {self.publication_date}'
+
 
 class PhotoSession(models.Model):
 
@@ -54,4 +54,7 @@ class PhotoSession(models.Model):
         UserModel,
         on_delete=models.RESTRICT,
     )
+
+    def __str__(self):
+        return f'{self.user} has reserved Date:{self.reserved_date}'
 

@@ -54,3 +54,6 @@ class Items(models.Model):
         null=False,
         blank=False,
     )
+
+    def __str__(self):
+        return f'{self.user} added {self.item_name} in Store on {self.publication_date}'
