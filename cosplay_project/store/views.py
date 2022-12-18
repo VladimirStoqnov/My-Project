@@ -10,7 +10,7 @@ class StoreHomeView(views.ListView):
     model = Items
     template_name = 'store/store-home.html'
 
-    paginate_by = 4
+    paginate_by = 5
 
 
 @login_required()

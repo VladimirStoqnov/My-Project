@@ -14,7 +14,7 @@
                         <div>{{ event.date_of_event }}</div>
                     </a>
 
-                    {% if request.user.is_superuser or request.user.is_staff %}
+                    {% if request.user.is_superuser %}
                         <div >
                             <a class="event-delete" href="{% url 'edit event' pk=event.pk %}">Edit</a>
                             <a class="event-delete" href="{% url 'delete event' pk=event.pk %}">Delete</a>
