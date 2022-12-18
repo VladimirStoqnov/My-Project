@@ -3,17 +3,9 @@ from enum import Enum
 from django.contrib.auth import get_user_model
 from django.db import models
 
+from cosplay_project.core.model_mixins import ChoicesEnumMixin
+
 UserModel = get_user_model()
-
-
-class ChoicesEnumMixin:
-    @classmethod
-    def choices(cls):
-        return [(x.name, x.value) for x in cls]
-
-    @classmethod
-    def max_len(cls):
-        return max(len(name) for name, _ in cls.choices())
 
 
 class Type(ChoicesEnumMixin, Enum):
