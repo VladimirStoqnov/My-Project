@@ -55,6 +55,9 @@ class PhotoSession(models.Model):
         on_delete=models.CASCADE,
     )
 
+    class Meta:
+        verbose_name_plural = 'Photo Sessions'
+
     def __str__(self):
         return f'{self.user} has reserved Date:{self.reserved_date}'
 

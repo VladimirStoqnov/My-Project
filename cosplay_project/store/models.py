@@ -47,5 +47,8 @@ class Items(models.Model):
         blank=False,
     )
 
+    class Meta:
+        verbose_name_plural = 'Items'
+
     def __str__(self):
         return f'{self.user} added {self.item_name} in Store on {self.publication_date}'
